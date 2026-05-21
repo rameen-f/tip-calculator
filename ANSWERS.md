@@ -14,19 +14,6 @@
 3. Double-click `index.html` — it opens directly in any modern browser (Chrome, Firefox, Edge, Safari).
 4. No terminal, no `npm install`, no build step required.
 
-### Deploy on GitHub Pages (Free)
-
-1. Push the three files to a GitHub repository (make sure `index.html` is at the root).
-2. Go to **Settings → Pages**.
-3. Under *Source*, select the `main` branch and `/ (root)`.
-4. Click **Save** — GitHub will give you a live URL in about 60 seconds.
-
-### Deploy on Netlify (Drag & Drop)
-
-1. Go to [netlify.com](https://netlify.com) and sign in.
-2. Drag the project folder onto the Netlify deploy area.
-3. Your site is live instantly with a shareable URL.
-
 ---
 
 ## Q2. Stack & Design Choices
