@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Calculator & Bill Splitter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <main class="app-wrapper">
+
+    <header class="app-header">
+      <div class="logo-mark" aria-hidden="true">₨</div>
+      <div>
+        <h1 class="app-title">Bill Splitter</h1>
+        <p class="app-subtitle">Split smart. Tip fair.</p>
+      </div>
+    </header>
+
+    <div class="card-grid">
+
+      <!-- ── LEFT / INPUT CARD ── -->
+      <section class="card card-inputs" aria-label="Bill inputs">
+
+        <!-- Bill Amount -->
+        <div class="field-group">
+          <label class="field-label" for="billAmount">
+            Bill Amount
+            <span class="currency-badge">Rs</span>
+          </label>
+          <div class="input-wrap" id="billWrap">
+            <span class="input-prefix" aria-hidden="true">₨</span>
+            <input
+              type="number"
+              id="billAmount"
+              class="field-input"
+              placeholder="0.00"
+              min="0"
+              step="0.01"
+              autocomplete="off"
+              aria-describedby="billError"
+              aria-required="true"
+            />
+          </div>
+          <span class="error-msg" id="billError" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Tip Percentage -->
+        <div class="field-group">
+          <label class="field-label" for="customTip">Tip Percentage</label>
+
+          <div class="tip-presets" role="group" aria-label="Preset tip percentages">
+            <button class="tip-btn" data-tip="10" type="button" aria-pressed="false">10%</button>
+            <button class="tip-btn" data-tip="15" type="button" aria-pressed="false">15%</button>
+            <button class="tip-btn" data-tip="20" type="button" aria-pressed="false">20%</button>
+          </div>
+
+          <div class="input-wrap" id="tipWrap">
+            <input
+              type="number"
+              id="customTip"
+              class="field-input"
+              placeholder="Custom %"
+              min="0"
+              step="0.1"
+              autocomplete="off"
+              aria-describedby="tipError"
+              aria-label="Custom tip percentage"
+            />
+            <span class="input-suffix" aria-hidden="true">%</span>
+          </div>
+          <span class="error-msg" id="tipError" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Number of People -->
+        <div class="field-group">
+          <label class="field-label" for="numPeople">Number of People</label>
+          <div class="input-wrap" id="peopleWrap">
+            <span class="input-prefix" aria-hidden="true">👤</span>
+            <input
+              type="number"
+              id="numPeople"
+              class="field-input"
+              placeholder="1"
+              min="1"
+              step="1"
+              autocomplete="off"
+              aria-describedby="peopleError"
+              aria-required="true"
+            />
+          </div>
+          <span class="error-msg" id="peopleError" role="alert" aria-live="polite"></span>
+        </div>
+
+        <button class="reset-btn" id="resetBtn" type="button" aria-label="Reset all fields">
+          <span>↺</span> Reset
+        </button>
+
+      </section>
+
+      <!-- ── RIGHT / OUTPUT CARD ── -->
+      <section class="card card-results" aria-label="Calculation results" aria-live="polite">
+
+        <div class="results-header">
+          <span class="results-label">Your breakdown</span>
+        </div>
+
+        <div class="result-row">
+          <div class="result-info">
+            <span class="result-title">Tip Amount</span>
+            <span class="result-sub">Total tip on bill</span>
+          </div>
+          <output class="result-value" id="tipAmount" for="billAmount customTip numPeople">
+            <span class="value-num">—</span>
+          </output>
+        </div>
+
+        <div class="result-divider" aria-hidden="true"></div>
+
+        <div class="result-row">
+          <div class="result-info">
+            <span class="result-title">Grand Total</span>
+            <span class="result-sub">Bill + tip</span>
+          </div>
+          <output class="result-value" id="grandTotal" for="billAmount customTip numPeople">
+            <span class="value-num">—</span>
+          </output>
+        </div>
+
+        <div class="result-divider" aria-hidden="true"></div>
+
+        <div class="result-row result-row--highlight">
+          <div class="result-info">
+            <span class="result-title">Per Person</span>
+            <span class="result-sub">Each person pays</span>
+          </div>
+          <output class="result-value result-value--big" id="perPerson" for="billAmount customTip numPeople">
+            <span class="value-num">—</span>
+          </output>
+        </div>
+
+        <div class="empty-state" id="emptyState" aria-live="polite">
+          <p>Enter bill details<br/>to see the breakdown</p>
+        </div>
+
+      </section>
+
+    </div><!-- /.card-grid -->
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
