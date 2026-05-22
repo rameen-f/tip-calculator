@@ -22,7 +22,7 @@ That's it. No `npm install`. No build step. No terminal required for normal use.
 ---
 Live Demo
 Push to GitHub Pages to get your live URL and paste it here.
-Example: https://rameen-f.github.io/tip-calculator/
+Example: https://your-username.github.io/tip-calculator
 
 ## What It Does
 
