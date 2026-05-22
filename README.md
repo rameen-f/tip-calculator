@@ -4,6 +4,15 @@ A clean, fast, fully validated tip calculator and bill splitter built with pure 
 
 ---
 
+## Live Demo
+
+| Platform | URL |
+|---|---|
+| Netlify | [https://genuine-faloodeh-rameen.netlify.app](https://genuine-faloodeh-rameen.netlify.app) |
+| GitHub Pages | [https://rameen-f.github.io/tip-calculator/](https://rameen-f.github.io/tip-calculator/) |
+
+---
+
 ## How to Run Locally
 
 No installation needed. Seriously.
@@ -15,14 +24,15 @@ No installation needed. Seriously.
 
 ```bash
 # Or via terminal
-
+git clone https://github.com/rameen-f/tip-calculator.git
+cd tip-calculator
+open index.html        # Mac
+start index.html       # Windows
+```
 
 That's it. No `npm install`. No build step. No terminal required for normal use.
 
 ---
-Live Demo
-Push to GitHub Pages to get your live URL and paste it here.
-Example: https://your-username.github.io/tip-calculator
 
 ## What It Does
 
@@ -101,4 +111,8 @@ This project was built incrementally:
 
 ---
 
+## Assessment Submission
 
+Built for the **Dev Weekends Fellowship 2026** frontend assessment.
+
+Assessed on: validation quality, smooth interaction, responsiveness, and handling broken inputs gracefully.
